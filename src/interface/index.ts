@@ -20,3 +20,10 @@ export interface IProduct {
     url: any;
     price?: number;
 }
+
+export type CartContextType = {
+    cart: IProduct[],
+    addToCart: (product: IProduct) => void,
+    deleteItemCart: (product: IProduct) => void,
+    clearCart: (product: IProduct) => void
+}

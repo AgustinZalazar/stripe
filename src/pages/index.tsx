@@ -1,14 +1,11 @@
-import ProductList from '@/components/ProductList'
 import { IProduct } from '@/interface'
+import ProductList from '@/components/ProductList'
 import axios from 'axios'
-import Image from 'next/image'
 
 
 export default function Home({ products }: { products: IProduct[] }) {
   return (
-    <main
-      className=''
-    >
+    <main className='w-full h-full'>
       <ProductList products={products} />
     </main>
   )
