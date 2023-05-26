@@ -35,7 +35,7 @@ export default async function name(req: NextApiRequest, res: NextApiResponse) {
             res.status(500).json({ error: error.message })
         }
     } else {
-        res.redirect(303, "http://localhost:3000/")
+        res.redirect(303, `${req.headers.origin}`)
     }
 
 }

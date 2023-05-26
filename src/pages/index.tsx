@@ -13,7 +13,7 @@ export default function Home({ products }: { products: IProduct[] }) {
 
 export async function getStaticProps() {
   try {
-    const { data: products } = await axios('http://localhost:3000/api/products')
+    const { data: products } = await axios(`${process.env.NEXT_URL}/api/products`)
     return {
       props: { products },
       revalidate: 86400
