@@ -1,7 +1,7 @@
 import useCart from '@/hooks/useCart'
 import { IProduct } from '@/interface'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 interface ProductProps {
     product: IProduct,
@@ -17,7 +17,7 @@ const Product = ({ product }: ProductProps) => {
                 <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{product.name.toLocaleUpperCase()}</h5>
                 <div className="flex flex-col items-left justify-between gap-4">
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">${product.price}</span>
-                    {productExist ?
+                    {productExist === -1 ?
                         <button onClick={() => addToCart(product)} className="text-white bg-black hover:bg-slate-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Buy item</button>
                         :
                         <button onClick={() => deleteItemCart(product)} className="text-white  bg-red-700 hover:bg-red-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center">Remove item</button>
